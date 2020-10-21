@@ -8,5 +8,9 @@ apiRoutes.get('/', async (_, res) => {
 
 apiRoutes.get('/test', TweetController.test)
 
+apiRoutes.get('/getTweetsLocation', TweetController.getTweetsLocation)
+apiRoutes.get('/listTweets', TweetController.listTweets)
+
+
 
 module.exports = apiRoutes
