@@ -2,39 +2,25 @@ const Tweet = require('./tweet.model')
 
 async function test(req, res) {
     await Tweet.create({
-        content: "wildan",
-        dateTweetCreated: Date('2020-10-21T13:36:12.175Z'),
-        "latitude": "-6.1753936",
-        "longitude": "106.82718601871409",
+        content: "Banjir di Cipinang Indah meninggalkan sampah yang menjulang tinggi lebih dari satu meter. Membuat tak sedap dipandang   https://t.co/HEa5IlbXIV  #sampah #Jakarta  https://t.co/tUrFvjeWZA",
+        dateTweetCreated: new Date('2020-01-06T17:29:48.175Z'),
+        "latitude": "-6.2079995",
+        "longitude": "106.89084847872",
         locationInfo: {
             "country": "Indonesia",
             "country_code": "id",
             "province": "Daerah Khusus Ibukota Jakarta",
-            "city": "Jakarta Pusat",
-            "kecamatan": "Gambir",
-            "kelurahan": "Gambir",
-            "parsed_place_name": "Monumen Nasional, Jalan Medan Merdeka Utara, RW 02, Gambir, Daerah Khusus Ibukota Jakarta, Gambir, Jakarta Pusat, 10110, Indonesia",
+            "city": "Jakarta Timur",
+            "kecamatan": "Pulo Gadung",
+            "kelurahan": "Cipinang",
+            "parsed_place_name": "Daerah Khusus Ibukota Jakarta, Cipinang, Pulo Gadung, Jakarta Timur, Indonesia",
             "type": "OSM",
-            "place_id": "172826097"
+            "place_id": "235961679"
         },
-        confidence: 3
-    })
-    await Tweet.create({
-        content: "wildan",
-        dateTweetCreated: Date('2020-10-21T13:36:12.175Z'),
-        "latitude": "-6.1753936",
-        "longitude": "106.82718601871409",
-        locationInfo: {
-            "country": "Indonesia",
-            "country_code": "id",
-            "province": "Daerah Khusus Ibukota Jakarta",
-            "city": "Jakarta Pusat",
-            "kecamatan": "Gambir",
-            "kelurahan": "Gambir",
-            "parsed_place_name": "Monumen Nasional, Jalan Medan Merdeka Utara, RW 02, Gambir, Daerah Khusus Ibukota Jakarta, Gambir, Jakarta Pusat, 10110, Indonesia",
-            "type": "OSM",
-            "place_id": "172826097"
-        },
+        img: "https://pbs.twimg.com/profile_images/874129984524238848/lfNpT7ME_400x400.jpg",
+        tweet_url: "https://twitter.com/PasangMata/status/1214131946961289217",
+        username: "PasangMata",
+        name: "pasangmatadotcom",
         confidence: 5
     })
     res.send('berhasil2')

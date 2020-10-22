@@ -10,10 +10,22 @@ const tweetSchema = new Schema(
         tweetId: {
             type: String
         },
+        tweet_url: {
+            type: String
+        },
+        username: {
+            type: String
+        },
+        name: {
+            type: String
+        },
         latitude: {
             type: String
         },
         longitude: {
+            type: String
+        },
+        img: {
             type: String
         },
         confidence: {
