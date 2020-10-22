@@ -1,1 +1,1 @@
-npm productionStart
+npm run productionStart
