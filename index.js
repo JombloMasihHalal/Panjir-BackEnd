@@ -7,6 +7,8 @@ require('./mongoose')
 
 const app = express()
 const port = process.env.PORT || 3000
+app.use(express.json())       // to support JSON-encoded bodies
+app.use(express.urlencoded())
 app.use(cors())
 app.use(morgan('dev'))
 
