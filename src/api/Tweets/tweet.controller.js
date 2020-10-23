@@ -62,12 +62,21 @@ async function getTweetsLocation(req, res) {
 }
 
 async function listTweets(req, res) {
-    const { query: { since, until, latitude, longitude } } = req
-    const result = await Tweet.find({
-        dateTweetCreated: { "$gte": new Date(since), "$lte": new Date(until) },
-        latitude,
-        longitude
-    })
+    const { query: { since, until, latitude, longitude, sortByConfidence } } = req
+    const qFind = {
+        dateTweetCreated: { "$gte": new Date(since), "$lte": new Date(until) }
+    }
+    if (latitude && longitude) {
+        qFind.latitude = latitude
+        qFind.longitude = longitude
+    }
+    let q
+    if (sortByConfidence && sortByConfidence === "1") {
+        q = Tweet.find(q).sort([['confidence', -1]])
+    } else {
+        q = Tweet.find(q).sort([['dateTweetCreated', -1]])
+    }
+    const result = await q
     res.send({
         data: result
     })
